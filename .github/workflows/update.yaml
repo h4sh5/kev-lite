@@ -1,0 +1,29 @@
+name: Update kev
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 */12 * * *' # every 12 hours
+
+
+jobs:
+  action_job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+
+    - name: update kev
+      run: ./fetch-kev.sh
+
+    - name: Push new data to git
+      run: | 
+        git config --global user.name 'updater'
+        git config --global user.email 'updater@open-source.local'
+        git config --global branch.autoSetupMerge always
+        git config --global core.mergeoptions --no-edit
+        git config --global pull.rebase false
+
+        git add *.json || echo nothing to add
+        git commit -m "kev json $(date)"
+        git pull
+        git push 

@@ -83,7 +83,7 @@
             unofficial and not fit for any purpose. You almost certainly want
             the <a href="https://cisa.gov/kev">real KEV</a> catalog if you're
             going to rely on this data. Patches for this page are accepted at
-            <a href="https://github.com/todb/kev-lite">GitHub</a>.</p>        
+            <a href="https://github.com/h4sh5/kev-lite">GitHub</a>.</p>        
             <p>
                 Click anywhere <span class="toggleable-background">in a
                     row</span> to expand for more details, references, and notes.
@@ -111,7 +111,7 @@
                     
                     <!-- Thanks ChatGPT for most of this JavaScript / JQuery code -->
                     <script>
-                        fetch('https://todb.github.io/kev-lite/cisa.json') // Just assuming cisa.gov isn't going to poison us intentionally...
+                        fetch('https://h4sh5.github.io/kev-lite/cisa.json') // Just assuming cisa.gov isn't going to poison us intentionally...
                         .then(response => response.json())
                         .then(data => {
                             // Sort vulnerabilities by dateAdded, then by CVE ID (latest first)
