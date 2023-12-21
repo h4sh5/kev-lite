@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 json_file="cisa.json"
 log_file="kev.log"
